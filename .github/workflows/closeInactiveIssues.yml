@@ -1,0 +1,26 @@
+name: Close inactive issues
+on:
+  schedule:
+    - cron: "30 1 * * *"
+
+jobs:
+  close-issues:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+      pull-requests: write
+    steps:
+      - uses: actions/stale@v8
+        with:
+          days-before-issue-stale: 15
+          days-before-issue-close: 5
+          stale-issue-label: "搁置"
+          stale-issue-message: |
+            这个议题由于15天未活动而被搁置。
+            This issue is stale because it has been open for 15 days with no activity.
+          close-issue-message: |
+            这个议题由于被搁置后5天内仍未活动而关闭。
+            This issue was closed because it has been inactive for 5 days since being marked as stale.
+          days-before-pr-stale: -1
+          days-before-pr-close: -1
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
