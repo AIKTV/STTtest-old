@@ -1,7 +1,7 @@
 [submodule "whisper-ctranslate2"]
-    path = /whisper-ctranslate2
-    url = git@github.com:Softcatala/whisper-ctranslate2.git
+	path = whisper-ctranslate2
+	url = https://github.com/Softcatala/whisper-ctranslate2.git
 
-[submodule "faster-whisper-large-v3"]
-    path = /model/faster-whisper-large-v3
-    url = git@hf.co:Systran/faster-whisper-large-v3
+[submodule "model/faster-whisper-large-v3"]
+	path = model/faster-whisper-large-v3
+	url = https://huggingface.co/Systran/faster-whisper-large-v3
